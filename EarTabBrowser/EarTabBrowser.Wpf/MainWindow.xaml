@@ -1,12 +1,60 @@
-﻿<Window x:Class="EarTabBrowser.Wpf.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:EarTabBrowser.Wpf"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+﻿<Window
+	x:Class="EarTabBrowser.Wpf.MainWindow"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:local="clr-namespace:EarTabBrowser.Wpf"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:wpf="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+	Title="耳たぶブラウザ"
+	Width="800"
+	Height="450"
+	mc:Ignorable="d">
+	<Window.Resources>
+		<Style
+			x:Key="EarTabItem"
+			TargetType="TabItem">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="TabItem">
+						<Border Background="Transparent">
+							<ContentPresenter
+								Margin="0"
+								ContentSource="Header"/>
+						</Border>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+			<Style.Triggers>
+				<Trigger Property="IsSelected" Value="True">
+					<Setter Property="Margin" Value="0,8,0,0"/>
+				</Trigger>
+				<Trigger Property="IsSelected" Value="False">
+					<Setter Property="Margin" Value="0,24,0,0"/>
+				</Trigger>
+			</Style.Triggers>
+		</Style>
+	</Window.Resources>
+	<TabControl>
+		<TabItem Style="{StaticResource EarTabItem}">
+			<TabItem.Header>
+				<Image
+					Width="190"
+					Height="100"
+					Source="Images/TabHeader.png"
+					Stretch="Fill"/>
+			</TabItem.Header>
+			<wpf:WebView2 Source="https://google.com"/>
+		</TabItem>
+		<TabItem Style="{StaticResource EarTabItem}">
+			<TabItem.Header>
+				<Image
+					Width="190"
+					Height="100"
+					Source="Images/TabHeader.png"
+					Stretch="Fill"/>
+			</TabItem.Header>
+			<wpf:WebView2 Source="https://google.com"/>
+		</TabItem>
+	</TabControl>
 </Window>
