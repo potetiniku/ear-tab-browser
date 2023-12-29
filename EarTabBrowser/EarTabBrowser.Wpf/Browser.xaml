@@ -54,7 +54,7 @@
 				Grid.Column="3"
 				VerticalContentAlignment="Center"
 				KeyDown="NavigateIfRetrun"
-				Text="https://google.com"
+				Text="https://www.google.com/"
 				ToolTip="URLを入力"/>
 			<Button
 				Grid.Column="4"
@@ -77,6 +77,6 @@
 		</Grid>
 		<webview:WebView2
 			x:Name="webView"
-			Source="https://google.com"/>
+			Source="https://www.google.com/"/>
 	</DockPanel>
 </UserControl>
