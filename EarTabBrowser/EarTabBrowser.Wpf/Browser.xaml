@@ -28,13 +28,17 @@
 				<ColumnDefinition Width="Auto"/>
 			</Grid.ColumnDefinitions>
 			<Button
+				x:Name="goBackButton"
 				Grid.Column="0"
-				Click="GoBack">
+				Click="GoBack"
+				IsEnabled="False">
 				<iconPacks:Material Kind="ArrowLeft"/>
 			</Button>
 			<Button
+				x:Name="goForwardButton"
 				Grid.Column="1"
-				Click="GoForward">
+				Click="GoForward"
+				IsEnabled="False">
 				<iconPacks:Material Kind="ArrowRight"/>
 			</Button>
 			<Button

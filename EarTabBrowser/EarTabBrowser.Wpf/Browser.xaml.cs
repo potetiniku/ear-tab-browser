@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Web.WebView2.Core;
 
 namespace EarTabBrowser.Wpf;
 /// <summary>
@@ -22,6 +23,12 @@ public partial class Browser : UserControl
 	public Browser()
 	{
 		InitializeComponent();
+
+		webView.NavigationCompleted += (_, _) =>
+		{
+			goBackButton.IsEnabled = webView.CanGoBack;
+			goForwardButton.IsEnabled = webView.CanGoForward;
+		};
 		_ = InitializeWebViewAsync();
 	}
 
