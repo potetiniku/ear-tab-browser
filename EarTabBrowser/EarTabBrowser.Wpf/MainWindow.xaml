@@ -5,11 +5,27 @@
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:local="clr-namespace:EarTabBrowser.Wpf"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	xmlns:wpf="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
 	Title="耳たぶブラウザ"
 	Width="800"
 	Height="450"
+	MinWidth="800"
+	MinHeight="200"
+	AllowsTransparency="True"
+	Cursor="Hand"
+	ResizeMode="CanResizeWithGrip"
+	WindowStyle="None"
 	mc:Ignorable="d">
+	<Window.Background>
+		<SolidColorBrush>
+			<SolidColorBrush.Color>
+				<Color
+					A="1"
+					B="255"
+					G="255"
+					R="255"/>
+			</SolidColorBrush.Color>
+		</SolidColorBrush>
+	</Window.Background>
 	<Window.Resources>
 		<Style
 			x:Key="EarTabItem"
@@ -44,7 +60,7 @@
 					Source="Images/TabHeader.png"
 					Stretch="Fill"/>
 			</TabItem.Header>
-			<wpf:WebView2 Source="https://google.com"/>
+			<local:Browser/>
 		</TabItem>
 		<TabItem Style="{StaticResource EarTabItem}">
 			<TabItem.Header>
@@ -54,7 +70,27 @@
 					Source="Images/TabHeader.png"
 					Stretch="Fill"/>
 			</TabItem.Header>
-			<wpf:WebView2 Source="https://google.com"/>
+			<local:Browser/>
+		</TabItem>
+		<TabItem Style="{StaticResource EarTabItem}">
+			<TabItem.Header>
+				<Image
+					Width="190"
+					Height="100"
+					Source="Images/TabHeader.png"
+					Stretch="Fill"/>
+			</TabItem.Header>
+			<local:Browser/>
+		</TabItem>
+		<TabItem Style="{StaticResource EarTabItem}">
+			<TabItem.Header>
+				<Image
+					Width="190"
+					Height="100"
+					Source="Images/TabHeader.png"
+					Stretch="Fill"/>
+			</TabItem.Header>
+			<local:Browser/>
 		</TabItem>
 	</TabControl>
 </Window>
