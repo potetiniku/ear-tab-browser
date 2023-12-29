@@ -27,9 +27,7 @@
 		</SolidColorBrush>
 	</Window.Background>
 	<Window.Resources>
-		<Style
-			x:Key="EarTabItem"
-			TargetType="TabItem">
+		<Style TargetType="TabItem">
 			<Setter Property="Template">
 				<Setter.Value>
 					<ControlTemplate TargetType="TabItem">
@@ -52,7 +50,7 @@
 		</Style>
 	</Window.Resources>
 	<TabControl>
-		<TabItem Style="{StaticResource EarTabItem}">
+		<TabItem>
 			<TabItem.Header>
 				<Image
 					Width="190"
@@ -62,7 +60,7 @@
 			</TabItem.Header>
 			<local:Browser/>
 		</TabItem>
-		<TabItem Style="{StaticResource EarTabItem}">
+		<TabItem>
 			<TabItem.Header>
 				<Image
 					Width="190"
@@ -72,7 +70,7 @@
 			</TabItem.Header>
 			<local:Browser/>
 		</TabItem>
-		<TabItem Style="{StaticResource EarTabItem}">
+		<TabItem>
 			<TabItem.Header>
 				<Image
 					Width="190"
@@ -82,7 +80,7 @@
 			</TabItem.Header>
 			<local:Browser/>
 		</TabItem>
-		<TabItem Style="{StaticResource EarTabItem}">
+		<TabItem>
 			<TabItem.Header>
 				<Image
 					Width="190"
