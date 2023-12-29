@@ -27,29 +27,45 @@
 				<ColumnDefinition Width="Auto"/>
 				<ColumnDefinition Width="Auto"/>
 			</Grid.ColumnDefinitions>
-			<Button Grid.Column="0">
+			<Button
+				Grid.Column="0"
+				Click="GoBack">
 				<iconPacks:Material Kind="ArrowLeft"/>
 			</Button>
-			<Button Grid.Column="1">
+			<Button
+				Grid.Column="1"
+				Click="GoForward">
 				<iconPacks:Material Kind="ArrowRight"/>
 			</Button>
-			<Button Grid.Column="2">
+			<Button
+				Grid.Column="2"
+				Click="Reload">
 				<iconPacks:Material Kind="Reload"/>
 			</Button>
 			<TextBox
+				x:Name="addressBar"
 				Grid.Column="3"
 				VerticalContentAlignment="Center"
-				Text="hoge"/>
-			<Button Grid.Column="4">
+				KeyDown="NavigateIfRetrun"
+				Text="https://google.com"/>
+			<Button
+				Grid.Column="4"
+				Click="MinimizeWindow">
 				<iconPacks:Material Kind="WindowMinimize"/>
 			</Button>
-			<Button Grid.Column="5">
+			<Button
+				Grid.Column="5"
+				Click="MaximizeWindow">
 				<iconPacks:Material Kind="WindowMaximize"/>
 			</Button>
-			<Button Grid.Column="6">
+			<Button
+				Grid.Column="6"
+				Click="CloseWindow">
 				<iconPacks:Material Kind="WindowClose"/>
 			</Button>
 		</Grid>
-		<webview:WebView2 Source="https://google.com"/>
+		<webview:WebView2
+			x:Name="webView"
+			Source="https://google.com"/>
 	</DockPanel>
 </UserControl>
